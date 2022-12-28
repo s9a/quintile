@@ -2,7 +2,7 @@
 <html lang="en" class="tape-flow tape-black">
 <meta charset="utf-8">
 
-<title>quintile</title>
+<title>quintile mile</title>
 
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="black">
@@ -19,12 +19,6 @@
   html { font: max(3ex, 2vmax, 5vmin) monospace }
   body { margin: auto; padding: 2em }
   s { text-decoration-style: dotted }
-  s, i, b {
-    box-sizing: border-box;
-    display: inline-block;
-    flex-basis: 3em;
-    padding: 2vw;
-  }
   .dozen {
     display: table;
     list-style: decimal-leading-zero inside;
@@ -38,6 +32,12 @@
   }
   .duende li {
     display: flex;
+  }
+  .duende li > * {
+    box-sizing: border-box;
+    display: inline-block;
+    flex-basis: 3em;
+    padding: 2vw;
   }
 </style>
 
@@ -60,18 +60,18 @@
 </script>
 
 <ol class="dozen">
-  <li class="tape-pink">0°
-  <li class="tape-green">30°
-  <li class="tape-yellow">60°
-  <li class="tape-blue">90°
-  <li class="tape-pink">120°
-  <li class="tape-green">150°
-  <li class="tape-yellow">180°
-  <li class="tape-blue">210°
-  <li class="tape-pink">240°
-  <li class="tape-green">270°
-  <li class="tape-yellow">300°
-  <li class="tape-blue">330°
+  <li class="tape-pink"><i>0°</i>
+  <li class="tape-green"><b>30°</b>
+  <li class="tape-yellow"><s>60°</s>
+  <li class="tape-blue"><i>90°</i>
+  <li class="tape-pink"><b>120°</b>
+  <li class="tape-green"><s>150°</s>
+  <li class="tape-yellow"><i>180°</i>
+  <li class="tape-blue"><b>210°</b>
+  <li class="tape-pink"><s>240°</s>
+  <li class="tape-green"><i>270°</i>
+  <li class="tape-yellow"><b>300°</b>
+  <li class="tape-blue"><s>330°</s>
 </ol>
 
 <ol class="duende" id="duende">
