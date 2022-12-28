@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="tape-flow tape-white">
+<html lang="en" class="tape-flow tape-black">
 <meta charset="utf-8">
 
 <title>quintile</title>
@@ -14,18 +14,16 @@
 </style>
 
 <style>
-  :root {
-    --tape-white: gainsboro;
-  }
+  :root { --tape-white: gainsboro; }
   ::selection { background: hotpink; }
-  html { font: 2em monospace }
+  html { font: max(3ex, 2vmax, 5vmin) monospace }
   body { margin: auto; padding: 2em }
-  i, s {
-    /* padding-block: 1ex;
-    padding-inline: 1em; */
-  }
-  s {
-    text-decoration: dotted line-through;
+  s { text-decoration-style: dotted }
+  s, i, b {
+    box-sizing: border-box;
+    display: inline-block;
+    flex-basis: 3em;
+    padding: 2vw;
   }
   .dozen {
     display: table;
@@ -33,8 +31,13 @@
     padding: 0;
   }
   .duende {
+    display: table;
     list-style: none;
+    margin: auto;
     padding: 0;
+  }
+  .duende li {
+    display: flex;
   }
 </style>
 
@@ -50,10 +53,10 @@
 </form>
 
 <script>
-  var form = document.getElementById("starfish")
-  form.addEventListener("change", function(eve) {
-    console.log(group(eve.target.value))
-  })
+  // var form = document.getElementById("starfish")
+  // form.addEventListener("change", function(eve) {
+  //   console.log(group(eve.target.value))
+  // })
 </script>
 
 <ol class="dozen">
@@ -71,101 +74,80 @@
   <li class="tape-blue">330°
 </ol>
 
-<ol class="duende">
-  <li><i class="tape-pink">0</i> <s>72</s> <b class="tape-pink">144</b> <b>216</b> 288
-  <li><i class="tape-pink">1</i> <s>73</s> <b class="tape-pink">145</b> <b>217</b> 289
-  <li><i class="tape-pink">2</i> <s>74</s> <b class="tape-pink">146</b> <b>218</b> 290
-  <li><i class="tape-pink">3</i> <s>75</s> <b class="tape-pink">147</b> <b>219</b> 291
-  <li><i class="tape-pink">4</i> <s>76</s> <b class="tape-pink">148</b> <b>220</b> 292
-  <li><i class="tape-pink">5</i> <s>77</s> <b class="tape-pink">149</b> <b>221</b> 293
-  <li><i class="tape-pink">6</i> <s>78</s> <s>150</s> <b>222</b> 294
-  <li><i class="tape-pink">7</i> <s>79</s> <s>151</s> <b>223</b> 295
-  <li><i class="tape-pink">8</i> <s>80</s> <s>152</s> <b>224</b> 296
-  <li><i class="tape-pink">9</i> <s>81</s> <s>153</s> <b>225</b> 297
-  <li><i class="tape-pink">10</i> <s>82</s> <s>154</s> <b>226</b> 298
-  <li><i class="tape-pink">11</i> <s>83</s> <s>155</s> <b>227</b> 299
-  <li><i class="tape-pink">12</i> <s>84</s> <s>156</s> <b>228</b> <b>300</b>
-  <li><i class="tape-pink">13</i> <s>85</s> <s>157</s> <b>229</b> <b>301</b>
-  <li><i class="tape-pink">14</i> <s>86</s> <s>158</s> <b>230</b> <b>302</b>
-  <li><i class="tape-pink">15</i> <s>87</s> <s>159</s> <b>231</b> <b>303</b>
-  <li><i class="tape-pink">16</i> <s>88</s> <s>160</s> <b>232</b> <b>304</b>
-  <li><i class="tape-pink">17</i> <s>89</s> <s>161</s> <b>233</b> <b>305</b>
-  <li><i class="tape-pink">18</i> <i>90</i> <s>162</s> <b>234</b> <b>306</b>
-  <li><i class="tape-pink">19</i> <i>91</i> <s>163</s> <b>235</b> <b>307</b>
-  <li><i class="tape-pink">20</i> <i>92</i> <s>164</s> <b>236</b> <b>308</b>
-  <li><i class="tape-pink">21</i> <i>93</i> <s>165</s> <b>237</b> <b>309</b>
-  <li><i class="tape-pink">22</i> <i>94</i> <s>166</s> <b>238</b> <b>310</b>
-  <li><i class="tape-pink">23</i> <i>95</i> <s>167</s> <b>239</b> <b>311</b>
-  <li><i class="tape-pink">24</i> <i>96</i> <s>168</s> <s>240</s> <b>312</b>
-  <li><i class="tape-pink">25</i> <i>97</i> <s>169</s> <s>241</s> <b>313</b>
-  <li><i class="tape-pink">26</i> <i>98</i> <s>170</s> <s>242</s> <b>314</b>
-  <li><i class="tape-pink">27</i> <i>99</i> <s>171</s> <s>243</s> <b>315</b>
-  <li><i class="tape-pink">28</i> <i>100</i> <s>172</s> <s>244</s> <b>316</b>
-  <li><i class="tape-pink">29</i> <i>101</i> <s>173</s> <s>245</s> <b>317</b>
-  <li><b>30</b> <i>102</i> <s>174</s> <s>246</s> <b>318</b>
-  <li><b>31</b> <i>103</i> <s>175</s> <s>247</s> <b>319</b>
-  <li><b>32</b> <i>104</i> <s>176</s> <s>248</s> <b>320</b>
-  <li><b>33</b> <i>105</i> <s>177</s> <s>249</s> <b>321</b>
-  <li><b>34</b> <i>106</i> <s>178</s> <s>250</s> <b>322</b>
-  <li><b>35</b> <i>107</i> <s>179</s> <s>251</s> <b>323</b>
-  <li><b>36</b> <i>108</i> <i>180</i> <s>252</s> <b>324</b>
-  <li><b>37</b> <i>109</i> <i>181</i> <s>253</s> <b>325</b>
-  <li><b>38</b> <i>110</i> <i>182</i> <s>254</s> <b>326</b>
-  <li><b>39</b> <i>111</i> <i>183</i> <s>255</s> <b>327</b>
-  <li><b>40</b> <i>112</i> <i>184</i> <s>256</s> <b>328</b>
-  <li><b>41</b> <i>113</i> <i>185</i> <s>257</s> <b>329</b>
-  <li><b>42</b> <i>114</i> <i>186</i> <s>258</s> <s>330</s>
-  <li><b>43</b> <i>115</i> <i>187</i> <s>259</s> <s>331</s>
-  <li><b>44</b> <i>116</i> <i>188</i> <s>260</s> <s>332</s>
-  <li><b>45</b> <i>117</i> <i>189</i> <s>261</s> <s>333</s>
-  <li><b>46</b> <i>118</i> <i>190</i> <s>262</s> <s>334</s>
-  <li><b>47</b> <i>119</i> <i>191</i> <s>263</s> <s>335</s>
-  <li><b>48</b> <b class="tape-pink">120</b> <i>192</i> <s>264</s> <s>336</s>
-  <li><b>49</b> <b class="tape-pink">121</b> <i>193</i> <s>265</s> <s>337</s>
-  <li><b>50</b> <b class="tape-pink">122</b> <i>194</i> <s>266</s> <s>338</s>
-  <li><b>51</b> <b class="tape-pink">123</b> <i>195</i> <s>267</s> <s>339</s>
-  <li><b>52</b> <b class="tape-pink">124</b> <i>196</i> <s>268</s> <s>340</s>
-  <li><b>53</b> <b class="tape-pink">125</b> <i>197</i> <s>269</s> <s>341</s>
-  <li><b>54</b> <b class="tape-pink">126</b> <i>198</i> <i>270</i> <s>342</s>
-  <li><b>55</b> <b class="tape-pink">127</b> <i>199</i> <i>271</i> <s>343</s>
-  <li><b>56</b> <b class="tape-pink">128</b> <i>200</i> <i>272</i> <s>344</s>
-  <li><b>57</b> <b class="tape-pink">129</b> <i>201</i> <i>273</i> <s>345</s>
-  <li><b>58</b> <b class="tape-pink">130</b> <i>202</i> <i>274</i> <s>346</s>
-  <li><b>59</b> <b class="tape-pink">131</b> <i>203</i> <i>275</i> <s>347</s>
-  <li><s>60</s> <b class="tape-pink">132</b> <i>204</i> <i>276</i> <s>348</s>
-  <li><s>61</s> <b class="tape-pink">133</b> <i>205</i> <i>277</i> <s>349</s>
-  <li><s>62</s> <b class="tape-pink">134</b> <i>206</i> <i>278</i> <s>350</s>
-  <li><s>63</s> <b class="tape-pink">135</b> <i>207</i> <i>279</i> <s>351</s>
-  <li><s>64</s> <b class="tape-pink">136</b> <i>208</i> <i>280</i> <s>352</s>
-  <li><s>65</s> <b class="tape-pink">137</b> <i>209</i> <i>281</i> <s>353</s>
-  <li><s>66</s> <b class="tape-pink">138</b> <b>210</b> <i>282</i> <s>354</s>
-  <li><s>67</s> <b class="tape-pink">139</b> <b>211</b> <i>283</i> <s>355</s>
-  <li><s>68</s> <b class="tape-pink">140</b> <b>212</b> <i>284</i> <s>356</s>
-  <li><s>69</s> <b class="tape-pink">141</b> <b>213</b> <i>285</i> <s>357</s>
-  <li><s>70</s> <b class="tape-pink">142</b> <b>214</b> <i>286</i> <s>358</s>
-  <li><s>71</s> <b class="tape-pink">143</b> <b>215</b> <i>287</i> <s>359</s>
+<ol class="duende" id="duende">
+  <li><i class="tape-pink">0</i> <s class="tape-yellow">72</s> <b class="tape-pink">144</b> <b  class="tape-blue">216</b> <i class="tape-green">288</i>
+  <li><i class="tape-pink">1</i> <s class="tape-yellow">73</s> <b class="tape-pink">145</b> <b class="tape-blue">217</b> <i class="tape-green">289</i>
+  <li><i class="tape-pink">2</i> <s class="tape-yellow">74</s> <b class="tape-pink">146</b> <b class="tape-blue">218</b> <i class="tape-green">290</i>
+  <li><i class="tape-pink">3</i> <s class="tape-yellow">75</s> <b class="tape-pink">147</b> <b class="tape-blue">219</b> <i class="tape-green">291</i>
+  <li><i class="tape-pink">4</i> <s class="tape-yellow">76</s> <b class="tape-pink">148</b> <b class="tape-blue">220</b> <i class="tape-green">292</i>
+  <li><i class="tape-pink">5</i> <s class="tape-yellow">77</s> <b class="tape-pink">149</b> <b class="tape-blue">221</b> <i class="tape-green">293</i>
+  <li><i class="tape-pink">6</i> <s class="tape-yellow">78</s> <s  class="tape-green">150</s> <b class="tape-blue">222</b> <i class="tape-green">294</i>
+  <li><i class="tape-pink">7</i> <s class="tape-yellow">79</s> <s  class="tape-green">151</s> <b class="tape-blue">223</b> <i class="tape-green">295</i>
+  <li><i class="tape-pink">8</i> <s class="tape-yellow">80</s> <s class="tape-green">152</s> <b class="tape-blue">224</b> <i class="tape-green">296</i>
+  <li><i class="tape-pink">9</i> <s class="tape-yellow">81</s> <s class="tape-green">153</s> <b class="tape-blue">225</b> <i class="tape-green">297</i>
+  <li><i class="tape-pink">10</i> <s class="tape-yellow">82</s> <s class="tape-green">154</s> <b class="tape-blue">226</b> <i class="tape-green">298</i>
+  <li><i class="tape-pink">11</i> <s class="tape-yellow">83</s> <s class="tape-green">155</s> <b class="tape-blue">227</b> <i class="tape-green">299</i>
+  <li><i class="tape-pink">12</i> <s class="tape-yellow">84</s> <s class="tape-green">156</s> <b class="tape-blue">228</b> <b class="tape-yellow">300</b>
+  <li><i class="tape-pink">13</i> <s class="tape-yellow">85</s> <s class="tape-green">157</s> <b class="tape-blue">229</b> <b class="tape-yellow">301</b>
+  <li><i class="tape-pink">14</i> <s class="tape-yellow">86</s> <s class="tape-green">158</s> <b class="tape-blue">230</b> <b class="tape-yellow">302</b>
+  <li><i class="tape-pink">15</i> <s class="tape-yellow">87</s> <s class="tape-green">159</s> <b class="tape-blue">231</b> <b class="tape-yellow">303</b>
+  <li><i class="tape-pink">16</i> <s class="tape-yellow">88</s> <s class="tape-green">160</s> <b class="tape-blue">232</b> <b class="tape-yellow">304</b>
+  <li><i class="tape-pink">17</i> <s class="tape-yellow">89</s> <s class="tape-green">161</s> <b class="tape-blue">233</b> <b class="tape-yellow">305</b>
+  <li><i class="tape-pink">18</i> <i class="tape-blue">90</i> <s class="tape-green">162</s> <b class="tape-blue">234</b> <b class="tape-yellow">306</b>
+  <li><i class="tape-pink">19</i> <i class="tape-blue">91</i> <s class="tape-green">163</s> <b class="tape-blue">235</b> <b class="tape-yellow">307</b>
+  <li><i class="tape-pink">20</i> <i class="tape-blue">92</i> <s class="tape-green">164</s> <b class="tape-blue">236</b> <b class="tape-yellow">308</b>
+  <li><i class="tape-pink">21</i> <i class="tape-blue">93</i> <s class="tape-green">165</s> <b class="tape-blue">237</b> <b class="tape-yellow">309</b>
+  <li><i class="tape-pink">22</i> <i class="tape-blue">94</i> <s class="tape-green">166</s> <b class="tape-blue">238</b> <b class="tape-yellow">310</b>
+  <li><i class="tape-pink">23</i> <i class="tape-blue">95</i> <s class="tape-green">167</s> <b class="tape-blue">239</b> <b class="tape-yellow">311</b>
+  <li><i class="tape-pink">24</i> <i class="tape-blue">96</i> <s class="tape-green">168</s> <s class="tape-pink">240</s> <b class="tape-yellow">312</b>
+  <li><i class="tape-pink">25</i> <i class="tape-blue">97</i> <s class="tape-green">169</s> <s class="tape-pink">241</s> <b class="tape-yellow">313</b>
+  <li><i class="tape-pink">26</i> <i class="tape-blue">98</i> <s class="tape-green">170</s> <s class="tape-pink">242</s> <b class="tape-yellow">314</b>
+  <li><i class="tape-pink">27</i> <i class="tape-blue">99</i> <s class="tape-green">171</s> <s class="tape-pink">243</s> <b class="tape-yellow">315</b>
+  <li><i class="tape-pink">28</i> <i class="tape-blue">100</i> <s class="tape-green">172</s> <s class="tape-pink">244</s> <b class="tape-yellow">316</b>
+  <li><i class="tape-pink">29</i> <i class="tape-blue">101</i> <s class="tape-green">173</s> <s class="tape-pink">245</s> <b class="tape-yellow">317</b>
+  <li><b class="tape-green">30</b> <i class="tape-blue">102</i> <s class="tape-green">174</s> <s class="tape-pink">246</s> <b class="tape-yellow">318</b>
+  <li><b class="tape-green">31</b> <i class="tape-blue">103</i> <s class="tape-green">175</s> <s class="tape-pink">247</s> <b class="tape-yellow">319</b>
+  <li><b class="tape-green">32</b> <i class="tape-blue">104</i> <s class="tape-green">176</s> <s class="tape-pink">248</s> <b class="tape-yellow">320</b>
+  <li><b class="tape-green">33</b> <i class="tape-blue">105</i> <s class="tape-green">177</s> <s class="tape-pink">249</s> <b class="tape-yellow">321</b>
+  <li><b class="tape-green">34</b> <i class="tape-blue">106</i> <s class="tape-green">178</s> <s class="tape-pink">250</s> <b class="tape-yellow">322</b>
+  <li><b class="tape-green">35</b> <i class="tape-blue">107</i> <s class="tape-green">179</s> <s class="tape-pink">251</s> <b class="tape-yellow">323</b>
+  <li><b class="tape-green">36</b> <i class="tape-blue">108</i> <i class="tape-yellow">180</i> <s class="tape-pink">252</s> <b class="tape-yellow">324</b>
+  <li><b class="tape-green">37</b> <i class="tape-blue">109</i> <i class="tape-yellow">181</i> <s class="tape-pink">253</s> <b class="tape-yellow">325</b>
+  <li><b class="tape-green">38</b> <i class="tape-blue">110</i> <i class="tape-yellow">182</i> <s class="tape-pink">254</s> <b class="tape-yellow">326</b>
+  <li><b class="tape-green">39</b> <i class="tape-blue">111</i> <i class="tape-yellow">183</i> <s class="tape-pink">255</s> <b class="tape-yellow">327</b>
+  <li><b class="tape-green">40</b> <i class="tape-blue">112</i> <i class="tape-yellow">184</i> <s class="tape-pink">256</s> <b class="tape-yellow">328</b>
+  <li><b class="tape-green">41</b> <i class="tape-blue">113</i> <i class="tape-yellow">185</i> <s class="tape-pink">257</s> <b class="tape-yellow">329</b>
+  <li><b class="tape-green">42</b> <i class="tape-blue">114</i> <i class="tape-yellow">186</i> <s class="tape-pink">258</s> <s class="tape-blue">330</s>
+  <li><b class="tape-green">43</b> <i class="tape-blue">115</i> <i class="tape-yellow">187</i> <s class="tape-pink">259</s> <s class="tape-blue">331</s>
+  <li><b class="tape-green">44</b> <i class="tape-blue">116</i> <i class="tape-yellow">188</i> <s class="tape-pink">260</s> <s class="tape-blue">332</s>
+  <li><b class="tape-green">45</b> <i class="tape-blue">117</i> <i class="tape-yellow">189</i> <s class="tape-pink">261</s> <s class="tape-blue">333</s>
+  <li><b class="tape-green">46</b> <i class="tape-blue">118</i> <i class="tape-yellow">190</i> <s class="tape-pink">262</s> <s class="tape-blue">334</s>
+  <li><b class="tape-green">47</b> <i class="tape-blue">119</i> <i class="tape-yellow">191</i> <s class="tape-pink">263</s> <s class="tape-blue">335</s>
+  <li><b class="tape-green">48</b> <b class="tape-pink">120</b> <i class="tape-yellow">192</i> <s class="tape-pink">264</s> <s class="tape-blue">336</s>
+  <li><b class="tape-green">49</b> <b class="tape-pink">121</b> <i class="tape-yellow">193</i> <s class="tape-pink">265</s> <s class="tape-blue">337</s>
+  <li><b class="tape-green">50</b> <b class="tape-pink">122</b> <i class="tape-yellow">194</i> <s class="tape-pink">266</s> <s class="tape-blue">338</s>
+  <li><b class="tape-green">51</b> <b class="tape-pink">123</b> <i class="tape-yellow">195</i> <s class="tape-pink">267</s> <s class="tape-blue">339</s>
+  <li><b class="tape-green">52</b> <b class="tape-pink">124</b> <i class="tape-yellow">196</i> <s class="tape-pink">268</s> <s class="tape-blue">340</s>
+  <li><b class="tape-green">53</b> <b class="tape-pink">125</b> <i class="tape-yellow">197</i> <s class="tape-pink">269</s> <s class="tape-blue">341</s>
+  <li><b class="tape-green">54</b> <b class="tape-pink">126</b> <i class="tape-yellow">198</i> <i class="tape-green">270</i> <s class="tape-blue">342</s>
+  <li><b class="tape-green">55</b> <b class="tape-pink">127</b> <i class="tape-yellow">199</i> <i class="tape-green">271</i> <s class="tape-blue">343</s>
+  <li><b class="tape-green">56</b> <b class="tape-pink">128</b> <i class="tape-yellow">200</i> <i class="tape-green">272</i> <s class="tape-blue">344</s>
+  <li><b class="tape-green">57</b> <b class="tape-pink">129</b> <i class="tape-yellow">201</i> <i class="tape-green">273</i> <s class="tape-blue">345</s>
+  <li><b class="tape-green">58</b> <b class="tape-pink">130</b> <i class="tape-yellow">202</i> <i class="tape-green">274</i> <s class="tape-blue">346</s>
+  <li><b class="tape-green">59</b> <b class="tape-pink">131</b> <i class="tape-yellow">203</i> <i class="tape-green">275</i> <s class="tape-blue">347</s>
+  <li><s class="tape-yellow">60</s> <b class="tape-pink">132</b> <i class="tape-yellow">204</i> <i class="tape-green">276</i> <s class="tape-blue">348</s>
+  <li><s class="tape-yellow">61</s> <b class="tape-pink">133</b> <i class="tape-yellow">205</i> <i class="tape-green">277</i> <s class="tape-blue">349</s>
+  <li><s class="tape-yellow">62</s> <b class="tape-pink">134</b> <i class="tape-yellow">206</i> <i class="tape-green">278</i> <s class="tape-blue">350</s>
+  <li><s class="tape-yellow">63</s> <b class="tape-pink">135</b> <i class="tape-yellow">207</i> <i class="tape-green">279</i> <s class="tape-blue">351</s>
+  <li><s class="tape-yellow">64</s> <b class="tape-pink">136</b> <i class="tape-yellow">208</i> <i class="tape-green">280</i> <s class="tape-blue">352</s>
+  <li><s class="tape-yellow">65</s> <b class="tape-pink">137</b> <i class="tape-yellow">209</i> <i class="tape-green">281</i> <s class="tape-blue">353</s>
+  <li><s class="tape-yellow">66</s> <b class="tape-pink">138</b> <b class="tape-blue">210</b> <i class="tape-green">282</i> <s class="tape-blue">354</s>
+  <li><s class="tape-yellow">67</s> <b class="tape-pink">139</b> <b class="tape-blue">211</b> <i class="tape-green">283</i> <s class="tape-blue">355</s>
+  <li><s class="tape-yellow">68</s> <b class="tape-pink">140</b> <b class="tape-blue">212</b> <i class="tape-green">284</i> <s class="tape-blue">356</s>
+  <li><s class="tape-yellow">69</s> <b class="tape-pink">141</b> <b class="tape-blue">213</b> <i class="tape-green">285</i> <s class="tape-blue">357</s>
+  <li><s class="tape-yellow">70</s> <b class="tape-pink">142</b> <b class="tape-blue">214</b> <i class="tape-green">286</i> <s class="tape-blue">358</s>
+  <li><s class="tape-yellow">71</s> <b class="tape-pink">143</b> <b class="tape-blue">215</b> <i class="tape-green">287</i> <s class="tape-blue">359</s>
 </ol>
-
-<!-- <script>
-  !function(donkey) {
-    var i =
-    function kong(degree) {
-
-    }
-
-    var map = [].map
-    if (!map) return
-    var kong = "getElementsByTagName"
-    var td = donkey[kong]("td")
-  }(document)
-</script> -->
 
 <script src="dance.js"></script>
 <script src="dream.js"></script>
-
-<script>
-
-</script>
-<script>
-
-</script>
