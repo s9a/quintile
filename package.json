@@ -1,0 +1,6 @@
+{
+  "main": "dance.js",
+  "devDependencies": {
+    "eol": "^0.9.1"
+  }
+}

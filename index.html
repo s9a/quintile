@@ -1,13 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="tape-flow tape-white">
 <meta charset="utf-8">
 
-<title>space</title>
+<title>quintile</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="black">
 <meta name="color-scheme" content="dark">
 <meta name="description" content="safe space">
 
-<link rel="help" href="https://github.com/s9a/space">
+<style media=(color) data-imagine=https://s9a.org/tape/releases/tag/v0.5.0>
+:root{--tape-black:#090909;--tape-white:#e9e9e9;--tape-pink:#fbbfff;--tape-yellow:#eee833;--tape-blue:#11dff1;--tape-green:#44f477;--tape-filter:none;--tape-mix:transparent}@media (prefers-contrast:less){:root{--tape-white:#dcdcdc;--tape-black:#181818}}.tape-black,.tape-white{--tape-hex:var(--tape-white)}.tape-blue{--tape-hex:var(--tape-blue)}.tape-pink{--tape-hex:var(--tape-pink)}.tape-green{--tape-hex:var(--tape-green)}.tape-yellow{--tape-hex:var(--tape-yellow)}.tape-flat{border-color:transparent}.tape-flap{border-color:currentColor}.tape-flow{--tape-remix:none}.tape-flow :not(.tape-skip){background-color:transparent;color:inherit}.tape-black,.tape-blue,.tape-pink,.tape-green,.tape-yellow,.tape-white{--tape-mix:var(--tape-hex);--tape-remix:none;color:var(--tape-black)!important;background-color:var(--tape-mix)!important;background-image:var(--tape-remix);filter:var(--tape-filter)}.tape-black{--tape-mix:var(--tape-black);color:var(--tape-hex)!important}.tape-erase,.tape-erase *{color:transparent!important}
+</style>
+
+<style>
+  :root {
+    --tape-white: gainsboro;
+  }
+  ::selection { background: hotpink; }
+  html { font: 2em monospace }
+  body { margin: auto; padding: 2em }
+  i, s {
+    /* padding-block: 1ex;
+    padding-inline: 1em; */
+  }
+  s {
+    text-decoration: dotted line-through;
+  }
+  .dozen {
+    display: table;
+    list-style: decimal-leading-zero inside;
+    padding: 0;
+  }
+  .duende {
+    list-style: none;
+    padding: 0;
+  }
+</style>
+
+<link rel="help" href="https://github.com/s9a/quintile">
 <link rel="license" href="LICENSE.txt">
+
+<form id="starfish" aria-label="starfish" hidden>
+  <input name="a" type="number" value="0">
+  <input name="e" type="number" value="72">
+  <input name="i" type="number" value="144">
+  <input name="o" type="number" value="216">
+  <input name="u" type="number" value="288">
+</form>
+
+<script>
+  var form = document.getElementById("starfish")
+  form.addEventListener("change", function(eve) {
+    console.log(group(eve.target.value))
+  })
+</script>
+
+<ol class="dozen">
+  <li class="tape-pink">0°
+  <li class="tape-green">30°
+  <li class="tape-yellow">60°
+  <li class="tape-blue">90°
+  <li class="tape-pink">120°
+  <li class="tape-green">150°
+  <li class="tape-yellow">180°
+  <li class="tape-blue">210°
+  <li class="tape-pink">240°
+  <li class="tape-green">270°
+  <li class="tape-yellow">300°
+  <li class="tape-blue">330°
+</ol>
+
+<ol class="duende">
+  <li><i class="tape-pink">0</i> <s>72</s> <b class="tape-pink">144</b> <b>216</b> 288
+  <li><i class="tape-pink">1</i> <s>73</s> <b class="tape-pink">145</b> <b>217</b> 289
+  <li><i class="tape-pink">2</i> <s>74</s> <b class="tape-pink">146</b> <b>218</b> 290
+  <li><i class="tape-pink">3</i> <s>75</s> <b class="tape-pink">147</b> <b>219</b> 291
+  <li><i class="tape-pink">4</i> <s>76</s> <b class="tape-pink">148</b> <b>220</b> 292
+  <li><i class="tape-pink">5</i> <s>77</s> <b class="tape-pink">149</b> <b>221</b> 293
+  <li><i class="tape-pink">6</i> <s>78</s> <s>150</s> <b>222</b> 294
+  <li><i class="tape-pink">7</i> <s>79</s> <s>151</s> <b>223</b> 295
+  <li><i class="tape-pink">8</i> <s>80</s> <s>152</s> <b>224</b> 296
+  <li><i class="tape-pink">9</i> <s>81</s> <s>153</s> <b>225</b> 297
+  <li><i class="tape-pink">10</i> <s>82</s> <s>154</s> <b>226</b> 298
+  <li><i class="tape-pink">11</i> <s>83</s> <s>155</s> <b>227</b> 299
+  <li><i class="tape-pink">12</i> <s>84</s> <s>156</s> <b>228</b> <b>300</b>
+  <li><i class="tape-pink">13</i> <s>85</s> <s>157</s> <b>229</b> <b>301</b>
+  <li><i class="tape-pink">14</i> <s>86</s> <s>158</s> <b>230</b> <b>302</b>
+  <li><i class="tape-pink">15</i> <s>87</s> <s>159</s> <b>231</b> <b>303</b>
+  <li><i class="tape-pink">16</i> <s>88</s> <s>160</s> <b>232</b> <b>304</b>
+  <li><i class="tape-pink">17</i> <s>89</s> <s>161</s> <b>233</b> <b>305</b>
+  <li><i class="tape-pink">18</i> <i>90</i> <s>162</s> <b>234</b> <b>306</b>
+  <li><i class="tape-pink">19</i> <i>91</i> <s>163</s> <b>235</b> <b>307</b>
+  <li><i class="tape-pink">20</i> <i>92</i> <s>164</s> <b>236</b> <b>308</b>
+  <li><i class="tape-pink">21</i> <i>93</i> <s>165</s> <b>237</b> <b>309</b>
+  <li><i class="tape-pink">22</i> <i>94</i> <s>166</s> <b>238</b> <b>310</b>
+  <li><i class="tape-pink">23</i> <i>95</i> <s>167</s> <b>239</b> <b>311</b>
+  <li><i class="tape-pink">24</i> <i>96</i> <s>168</s> <s>240</s> <b>312</b>
+  <li><i class="tape-pink">25</i> <i>97</i> <s>169</s> <s>241</s> <b>313</b>
+  <li><i class="tape-pink">26</i> <i>98</i> <s>170</s> <s>242</s> <b>314</b>
+  <li><i class="tape-pink">27</i> <i>99</i> <s>171</s> <s>243</s> <b>315</b>
+  <li><i class="tape-pink">28</i> <i>100</i> <s>172</s> <s>244</s> <b>316</b>
+  <li><i class="tape-pink">29</i> <i>101</i> <s>173</s> <s>245</s> <b>317</b>
+  <li><b>30</b> <i>102</i> <s>174</s> <s>246</s> <b>318</b>
+  <li><b>31</b> <i>103</i> <s>175</s> <s>247</s> <b>319</b>
+  <li><b>32</b> <i>104</i> <s>176</s> <s>248</s> <b>320</b>
+  <li><b>33</b> <i>105</i> <s>177</s> <s>249</s> <b>321</b>
+  <li><b>34</b> <i>106</i> <s>178</s> <s>250</s> <b>322</b>
+  <li><b>35</b> <i>107</i> <s>179</s> <s>251</s> <b>323</b>
+  <li><b>36</b> <i>108</i> <i>180</i> <s>252</s> <b>324</b>
+  <li><b>37</b> <i>109</i> <i>181</i> <s>253</s> <b>325</b>
+  <li><b>38</b> <i>110</i> <i>182</i> <s>254</s> <b>326</b>
+  <li><b>39</b> <i>111</i> <i>183</i> <s>255</s> <b>327</b>
+  <li><b>40</b> <i>112</i> <i>184</i> <s>256</s> <b>328</b>
+  <li><b>41</b> <i>113</i> <i>185</i> <s>257</s> <b>329</b>
+  <li><b>42</b> <i>114</i> <i>186</i> <s>258</s> <s>330</s>
+  <li><b>43</b> <i>115</i> <i>187</i> <s>259</s> <s>331</s>
+  <li><b>44</b> <i>116</i> <i>188</i> <s>260</s> <s>332</s>
+  <li><b>45</b> <i>117</i> <i>189</i> <s>261</s> <s>333</s>
+  <li><b>46</b> <i>118</i> <i>190</i> <s>262</s> <s>334</s>
+  <li><b>47</b> <i>119</i> <i>191</i> <s>263</s> <s>335</s>
+  <li><b>48</b> <b class="tape-pink">120</b> <i>192</i> <s>264</s> <s>336</s>
+  <li><b>49</b> <b class="tape-pink">121</b> <i>193</i> <s>265</s> <s>337</s>
+  <li><b>50</b> <b class="tape-pink">122</b> <i>194</i> <s>266</s> <s>338</s>
+  <li><b>51</b> <b class="tape-pink">123</b> <i>195</i> <s>267</s> <s>339</s>
+  <li><b>52</b> <b class="tape-pink">124</b> <i>196</i> <s>268</s> <s>340</s>
+  <li><b>53</b> <b class="tape-pink">125</b> <i>197</i> <s>269</s> <s>341</s>
+  <li><b>54</b> <b class="tape-pink">126</b> <i>198</i> <i>270</i> <s>342</s>
+  <li><b>55</b> <b class="tape-pink">127</b> <i>199</i> <i>271</i> <s>343</s>
+  <li><b>56</b> <b class="tape-pink">128</b> <i>200</i> <i>272</i> <s>344</s>
+  <li><b>57</b> <b class="tape-pink">129</b> <i>201</i> <i>273</i> <s>345</s>
+  <li><b>58</b> <b class="tape-pink">130</b> <i>202</i> <i>274</i> <s>346</s>
+  <li><b>59</b> <b class="tape-pink">131</b> <i>203</i> <i>275</i> <s>347</s>
+  <li><s>60</s> <b class="tape-pink">132</b> <i>204</i> <i>276</i> <s>348</s>
+  <li><s>61</s> <b class="tape-pink">133</b> <i>205</i> <i>277</i> <s>349</s>
+  <li><s>62</s> <b class="tape-pink">134</b> <i>206</i> <i>278</i> <s>350</s>
+  <li><s>63</s> <b class="tape-pink">135</b> <i>207</i> <i>279</i> <s>351</s>
+  <li><s>64</s> <b class="tape-pink">136</b> <i>208</i> <i>280</i> <s>352</s>
+  <li><s>65</s> <b class="tape-pink">137</b> <i>209</i> <i>281</i> <s>353</s>
+  <li><s>66</s> <b class="tape-pink">138</b> <b>210</b> <i>282</i> <s>354</s>
+  <li><s>67</s> <b class="tape-pink">139</b> <b>211</b> <i>283</i> <s>355</s>
+  <li><s>68</s> <b class="tape-pink">140</b> <b>212</b> <i>284</i> <s>356</s>
+  <li><s>69</s> <b class="tape-pink">141</b> <b>213</b> <i>285</i> <s>357</s>
+  <li><s>70</s> <b class="tape-pink">142</b> <b>214</b> <i>286</i> <s>358</s>
+  <li><s>71</s> <b class="tape-pink">143</b> <b>215</b> <i>287</i> <s>359</s>
+</ol>
+
+<!-- <script>
+  !function(donkey) {
+    var i =
+    function kong(degree) {
+
+    }
+
+    var map = [].map
+    if (!map) return
+    var kong = "getElementsByTagName"
+    var td = donkey[kong]("td")
+  }(document)
+</script> -->
+
+<script src="dance.js"></script>
+<script src="dream.js"></script>
+
+<script>
+
+</script>
+<script>
+
+</script>
