@@ -13,56 +13,13 @@
 :root{--tape-black:#090909;--tape-white:#e9e9e9;--tape-pink:#fbbfff;--tape-yellow:#eee833;--tape-blue:#11dff1;--tape-green:#44f477;--tape-filter:none;--tape-mix:transparent}@media (prefers-contrast:less){:root{--tape-white:#dcdcdc;--tape-black:#181818}}.tape-black,.tape-white{--tape-hex:var(--tape-white)}.tape-blue{--tape-hex:var(--tape-blue)}.tape-pink{--tape-hex:var(--tape-pink)}.tape-green{--tape-hex:var(--tape-green)}.tape-yellow{--tape-hex:var(--tape-yellow)}.tape-flat{border-color:transparent}.tape-flap{border-color:currentColor}.tape-flow{--tape-remix:none}.tape-flow :not(.tape-skip){background-color:transparent;color:inherit}.tape-black,.tape-blue,.tape-pink,.tape-green,.tape-yellow,.tape-white{--tape-mix:var(--tape-hex);--tape-remix:none;color:var(--tape-black)!important;background-color:var(--tape-mix)!important;background-image:var(--tape-remix);filter:var(--tape-filter)}.tape-black{--tape-mix:var(--tape-black);color:var(--tape-hex)!important}.tape-erase,.tape-erase *{color:transparent!important}
 </style>
 
-<style>
+<style media=(color)>
   :root { --tape-white: gainsboro; }
   ::selection { background: hotpink; }
   :focus { outline: thick double }
-  html { font: max(3ex, 2vmax, 5vmin) monospace }
-  body { margin: auto; padding: 1em 2em 5em }
-  a { padding-inline: 1ex }
-  i { font-style: oblique }
-  s { text-decoration: dotted line-through .236ch }
-  .dozen {
-    display: table;
-    line-height: 1.618;
-    list-style: decimal-leading-zero inside;
-    padding: 0;
-  }
-  .dozen li {
-    box-sizing: border-box;
-    padding-inline: 1vw;
-  }
-  @supports (flex-flow: wrap) {
-    .dozen {
-      display: flex;
-      flex-flow: wrap;
-    }
-    @media (min-width: 20em) {
-      .dozen li { width: 50% }
-    }
-    @media (min-width: 60em) {
-      .dozen li { width: 25% }
-    }
-  }
-  .duende {
-    display: table;
-    list-style: none;
-    margin: auto;
-    padding: 0;
-  }
-  .duende li {
-    display: flex;
-  }
-  .duende li > * {
-    box-sizing: border-box;
-    display: inline-block;
-    flex-basis: 10ch;
-    padding: 2vw;
-    padding-block: 3vh;
-    padding-inline: 3vw;
-  }
 </style>
 
+<link rel="stylesheet" href="freestyle.css">
 <link rel="help" href="https://github.com/s9a/quintile">
 <link rel="license" href="LICENSE.txt">
 
