@@ -1,0 +1,54 @@
+body { margin: auto; padding: 1em 2em 5em }
+i { font-style: oblique }
+s { text-decoration: dotted line-through .236ch }
+html { font: max(3ex, 2vmax, 5vmin) monospace }
+a { padding-inline: 1ex }
+
+.dozen {
+  contain: style;
+  display: table;
+  line-height: 1.618;
+  list-style: decimal-leading-zero inside;
+  padding: 0;
+}
+
+.dozen li {
+  box-sizing: border-box;
+  padding-inline: 1vw;
+}
+
+@supports (flex-flow: wrap) {
+  .dozen {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+  @media (min-width: 20em) {
+    .dozen li { width: 50% }
+  }
+
+  @media (min-width: 60em) {
+    .dozen li { width: 25% }
+  }
+}
+
+.duende {
+  contain: style;
+  display: table;
+  list-style: none;
+  margin: auto;
+  padding: 0;
+}
+
+.duende li {
+  display: flex;
+}
+
+.duende li > * {
+  box-sizing: border-box;
+  display: inline-block;
+  flex-basis: 10ch;
+  padding: 2vw;
+  padding-block: 3vh;
+  padding-inline: 3vw;
+}
